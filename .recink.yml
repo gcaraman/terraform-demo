@@ -15,7 +15,6 @@ $:
     plan: true
     apply: false
     destroy: false
-    save-show-output: tfshow.txt
     vars:
       access_key: 'process.env.AWS_ACCESS_KEY_ID'
       secret_key: 'process.env.AWS_SECRET_ACCESS_KEY'
@@ -58,7 +57,7 @@ $:
         - firefox --headless
     pattern:
       - /.+\.e2e\.js$/i
-    ignore: ~
+    # ignore: ~
 
 ec2_dev:
   root: './ec2'
@@ -112,3 +111,6 @@ iam_power_user_policy:
       - workspace.default.tfvars
 unit:
   root: './tests/unit'
+
+e2e:
+  root: './tests/e2e'
