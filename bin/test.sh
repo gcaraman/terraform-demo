@@ -14,4 +14,11 @@ function on_fail() {
 }
 
 echo "Running 'recink run terraform' ..."
-recink run terraform -vv
+recink run terraform -vv --include-modules="ec2_dev"
+
+if [ -f "${APP_PATH}/ec2/.resource/terraform.tfstate.remote" ]; then
+  echo "Running 'recink run e2e' ..."
+  recink run e2e || on_fail
+else
+  echo "Skipping 'recink run e2e' ..."
+fi
