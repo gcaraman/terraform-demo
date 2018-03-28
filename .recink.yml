@@ -70,7 +70,7 @@ ec2_dev:
       - workspace.dev.tfvars
     tests:
       plan: './tests/unit'
-    save-show-output: true
+    save-show-output: './show-output.txt'
 
 ec2_prod:
   root: './ec2'
