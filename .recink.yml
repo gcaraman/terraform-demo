@@ -69,8 +69,8 @@ ec2_dev:
       - workspace.dev.tfvars
     tests:
       plan: './tests/unit'
-    save-show-output: './show-output.txt'
-
+    save-show-output: './output.txt'
+    
 ec2_prod:
   root: './ec2'
   terraform:
