@@ -67,19 +67,19 @@ ec2_plan:
     version: 0.11.0
     var-files:
       - workspace.dev.tfvars
-    tests:
+    test:
       plan: './tests/unit'
     save-show-output: './output.txt'
 
 ec2_apply:
   root: './ec2'
   terraform:
-    plan: false
+    plan: true
     apply: true
     version: 0.11.0
     var-files:
       - workspace.dev.tfvars
-    tests:
+    test:
       apply: './tests/e2e'
 
 ec2_prod:
