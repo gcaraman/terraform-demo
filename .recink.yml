@@ -74,15 +74,14 @@ ec2_plan:
 ec2_apply:
   root: './ec2'
   terraform:
-    plan: true
+    plan: false
     apply: true
     version: 0.11.0
     var-files:
       - workspace.dev.tfvars
     tests:
-      plan: './tests/unit'
-    save-show-output: './output.txt'
-    
+      apply: './tests/e2e'
+
 ec2_prod:
   root: './ec2'
   terraform:
@@ -121,8 +120,8 @@ iam_power_user_policy:
     version: 0.11.0
     var-files:
       - workspace.default.tfvars
-unit:
-  root: './tests/unit'
+# unit:
+#   root: './tests/unit'
 
-e2e:
-  root: './tests/e2e'
+# e2e:
+#   root: './tests/e2e'
