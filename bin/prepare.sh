@@ -33,7 +33,7 @@ setup_git() {
     echo "Setup git client"
     git config user.name "Jenkins CI"
     git config user.email "hello@adtechmedia.io"
-    git config --add core.longpaths true
+    git config --add core.longpaths true 
 }
 
 setup_testcafe() {
